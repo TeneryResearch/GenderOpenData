@@ -1,0 +1,64 @@
+version: "3.9"
+
+volumes:
+  postgres-data: {}
+  solr-data: {}
+  ckan-filestore: {}
+
+services:
+  web:
+    build: .
+    depends_on:
+        - db
+        - solr
+        - redis
+    ports:
+        - "5000:5000"
+    env_file:
+      - .env
+    command: ["ckan", "-c", "/ckan.ini", "run", "--host", "0.0.0.0"]
+    volumes:
+      - ./ckan.ini:/ckan.ini
+      - ckan-filestore:/var/lib/ckan/default
+  
+  ckan_gather_consumer:
+    build: .
+    depends_on:
+        - db
+        - solr
+        - redis
+    env_file:
+      - .env
+    command: paster --plugin=ckanext-harvest harvester gather_consumer --config=/ckan.ini
+    volumes:
+      - ./ckan.ini:/ckan.ini
+      - ckan-filestore:/var/lib/ckan/default
+  
+  datapusher:
+    build: contrib/ckan-datapusher
+    depends_on:
+      - web
+  
+  db:
+    build: contrib/postgresql
+    ports:
+      - "54321:5432"
+    environment:
+      - POSTGRES_USER=ckan_default
+      - POSTGRES_PASSWORD=pass
+      - DATASTORE_READONLY_PASS=pass
+      - PGUSER=ckan_default
+      - PGPASSWORD=pass
+    volumes:
+      - postgres-data:/var/lib/postgresql/data
+  
+  solr:
+    image: cwradvocacy/ckan-solr:2.9.2
+    ports:
+        - "8983:8983"
+    volumes:
+      - solr-data:/opt/solr/server/solr/ckan
+
+  redis:
+    image: redis:6.2.1
+  
