@@ -4,7 +4,7 @@ build:
 web:
 	docker-compose up web
 web-build:
-	docker-compose build --no-cache web
+	docker-compose build web
 bash:
 	docker-compose exec web bash
 

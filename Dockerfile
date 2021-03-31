@@ -12,7 +12,10 @@ ADD ckan.ini /ckan.ini
 
 # For Production
 RUN pip install uwsgi
+ADD ./contrib/ckan/ckan-uwsgi.ini /ckan-uwsgi.ini
+ADD ./contrib/ckan/ckan-wsgi.py /ckan-wsgi.py
 ADD Procfile /Procfile
+
 
 EXPOSE 8080/tcp
 
