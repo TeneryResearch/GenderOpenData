@@ -4,7 +4,6 @@ volumes:
   postgres-data: {}
   solr-data: {}
   ckan-filestore: {}
-  datapusher-db: {}
 
 services:
   web:
@@ -17,7 +16,6 @@ services:
         - "8080:8080"
     env_file:
       - .env
-    command: uwsgi -i /ckan-uwsgi.ini
     volumes:
       - ./ckan.ini:/ckan.ini
       - ./contrib/ckan/ckan-uwsgi.ini:/ckan-uwsgi.ini
@@ -41,10 +39,6 @@ services:
     build: contrib/ckan-datapusher
     depends_on:
       - web
-    # command: uwsgi -i /datapusher-uwsgi.ini
-    volumes: 
-      - ./contrib/ckan-datapusher/datapusher-uwsgi.ini:/datapusher-uwsgi.ini
-    
   
   db:
     build: contrib/postgresql

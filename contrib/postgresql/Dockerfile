@@ -1,4 +1,3 @@
-#FROM postgres:9.6
 FROM postgis/postgis:11-3.1
 
 # Customize default user/pass/db
