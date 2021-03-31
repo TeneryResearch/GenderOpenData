@@ -12,6 +12,8 @@ RUN pip install -q -r /requirements.txt && \
 
 ADD ckan.ini /ckan.ini
 
+# For Production
+RUN pip install uwsgi
 ADD Procfile /Procfile
 
-CMD ["gunicorn", "--workers", "3", "--worker-class", "gevent", "--paste", "ckan.ini", "-t", "600"]
+CMD ["ckan", "-c", "/ckan.ini", "run", "--host", "0.0.0.0"]

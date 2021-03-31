@@ -16,10 +16,8 @@ RUN pip install -U -q pip 'setuptools==45'
 RUN pip install -q -e "git+https://github.com/ckan/ckan.git@ckan-${CKAN_VERSION}#egg=ckan"
 RUN pip install -q -r /src/ckan/requirements.txt
 
-RUN pip install -q 'gunicorn[gevent]==20.1.0'
-
 ADD ./ckan-entrypoint.sh /
 RUN chmod +x /ckan-entrypoint.sh
 ENTRYPOINT [ "/ckan-entrypoint.sh" ]
 
-CMD [ "gunicorn", "--workers", "3", "--worker-class", "gevent", "--paste", "/src/ckan/ckan/config/deployment.ini_tmpl", "-t", "600" ]
+CMD ["ckan", "-c", "/ckan.ini", "run", "--host", "0.0.0.0"]

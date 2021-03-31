@@ -4,6 +4,7 @@ volumes:
   postgres-data: {}
   solr-data: {}
   ckan-filestore: {}
+  datapusher-db: {}
 
 services:
   web:
@@ -13,31 +14,37 @@ services:
         - solr
         - redis
     ports:
-        - "5000:5000"
+        - "8080:8080"
     env_file:
       - .env
-    command: ["ckan", "-c", "/ckan.ini", "run", "--host", "0.0.0.0"]
+    command: uwsgi -i /ckan-uwsgi.ini
     volumes:
       - ./ckan.ini:/ckan.ini
+      - ./contrib/ckan/ckan-uwsgi.ini:/ckan-uwsgi.ini
+      - ./contrib/ckan/ckan-wsgi.py:/ckan-wsgi.py
       - ckan-filestore:/var/lib/ckan/default
   
-  ckan_gather_consumer:
-    build: .
-    depends_on:
-        - db
-        - solr
-        - redis
-    env_file:
-      - .env
-    command: paster --plugin=ckanext-harvest harvester gather_consumer --config=/ckan.ini
-    volumes:
-      - ./ckan.ini:/ckan.ini
-      - ckan-filestore:/var/lib/ckan/default
+  # ckan_gather_consumer:
+  #   build: .
+  #   depends_on:
+  #       - db
+  #       - solr
+  #       - redis
+  #   env_file:
+  #     - .env
+  #   command: paster --plugin=ckanext-harvest harvester gather_consumer --config=/ckan.ini
+  #   volumes:
+  #     - ./ckan.ini:/ckan.ini
+  #     - ckan-filestore:/var/lib/ckan/default
   
   datapusher:
     build: contrib/ckan-datapusher
     depends_on:
       - web
+    # command: uwsgi -i /datapusher-uwsgi.ini
+    volumes: 
+      - ./contrib/ckan-datapusher/datapusher-uwsgi.ini:/datapusher-uwsgi.ini
+    
   
   db:
     build: contrib/postgresql
