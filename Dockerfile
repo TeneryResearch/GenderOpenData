@@ -1,7 +1,5 @@
 FROM cwradvocacy/ckan:2.9.2
 
-EXPOSE 5000/tcp
-
 WORKDIR /
 ADD requirements.txt /requirements.txt
 
@@ -16,4 +14,6 @@ ADD ckan.ini /ckan.ini
 RUN pip install uwsgi
 ADD Procfile /Procfile
 
-CMD ["ckan", "-c", "/ckan.ini", "run", "--host", "0.0.0.0"]
+EXPOSE 8080/tcp
+
+CMD ["uwsgi", "-i", "/ckan-uwsgi.ini"]
