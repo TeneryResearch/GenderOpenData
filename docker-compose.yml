@@ -18,8 +18,7 @@ services:
       - .env
     volumes:
       - ./ckan.ini:/ckan.ini
-      - ./contrib/ckan/ckan-uwsgi.ini:/ckan-uwsgi.ini
-      - ./contrib/ckan/ckan-wsgi.py:/ckan-wsgi.py
+      - ./ckanext-data2xafrica:/src/ckanex-data2xafrica
       - ckan-filestore:/var/lib/ckan/default
   
   # ckan_gather_consumer:
