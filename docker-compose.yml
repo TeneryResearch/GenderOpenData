@@ -16,9 +16,10 @@ services:
         - "8080:8080"
     env_file:
       - .env
+    command: ["ckan", "-c", "/ckan.ini", "run", "--host", "0.0.0.0"]
     volumes:
       - ./ckan.ini:/ckan.ini
-      - ./ckanext-data2xafrica:/src/ckanex-data2xafrica
+      - ./ckanext-data2xafrica:/src/ckanext-data2xafrica
       - ckan-filestore:/var/lib/ckan/default
   
   # ckan_gather_consumer:
