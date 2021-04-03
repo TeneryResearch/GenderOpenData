@@ -9,7 +9,6 @@ RUN pip install -q -r /requirements.txt && \
     pip install -q -r /src/ckanext-dcat/requirements.txt && \
     pip install uwsgi
 
-
 ADD ckan.ini /ckan.ini
 ADD ./contrib/ckan/ckan-uwsgi.ini /ckan-uwsgi.ini
 ADD ./contrib/ckan/ckan-wsgi.py /ckan-wsgi.py

@@ -9,16 +9,18 @@ services:
   web:
     build: .
     depends_on:
-        - db
-        - solr
-        - redis
+      - db
+      - solr
+      - redis
     ports:
-        - "8080:8080"
+      - "8080:8080"
+      - "5000:5000"
+    command: ["uwsgi", "-i", "/ckan-uwsgi.ini"]
     env_file:
       - .env
-    command: ["ckan", "-c", "/ckan.ini", "run", "--host", "0.0.0.0"]
     volumes:
       - ./ckan.ini:/ckan.ini
+      - ./contrib/ckan/ckan-uwsgi.ini:/ckan-uwsgi.ini
       - ./ckanext-data2xafrica:/src/ckanext-data2xafrica
       - ckan-filestore:/var/lib/ckan/default
   
