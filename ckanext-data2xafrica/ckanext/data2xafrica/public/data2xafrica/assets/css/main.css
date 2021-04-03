@@ -1,0 +1,11 @@
+.masthead {
+  background-color: #ffffff !important;
+}
+
+.masthead a {
+  color: #333 !important;
+}
+
+.masthead a:hover, .masthead li.active a {
+  color: #fff !important;
+}
