@@ -1,0 +1,26 @@
+{% set intro = g.site_intro_text %}
+
+<div class="module-content box">
+  <div>
+    {% if intro %}
+      {{ h.render_markdown(intro) }}
+    {% else %}
+      <h1 class="page-heading">{{ _("Welcome to Data2x.AFRICA") }}</h1>
+      <p>
+        {% trans %}Data2x.AFRICA is a volunteer-driven open data platform for feminist organisations to publish data, research, and resources.
+        {% endtrans %}
+      </p>
+    {% endif %}
+  </div>
+
+  {% block home_image %}
+    <section class="featured media-overlay hidden-xs">
+      <h2 class="media-heading">{% block home_image_caption %}{{ _("Maasai women field research. Narok, Kenya | CWRA, 2019") }}{% endblock %}</h2>
+      {% block home_image_content %}
+        <a class="media-image" href="#">
+          <img class="img-responsive" src="/data2xafrica/assets/img/promoted-home.jpg" alt="Placeholder" width="420" height="220" />
+        </a>
+      {% endblock %}
+    </section>
+  {% endblock %}
+</div>
