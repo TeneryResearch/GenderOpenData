@@ -16,6 +16,36 @@
 
 {% endblock %}
 
+{#
+  The links block allows you to add additonal content before the stylesheets
+  such as rss feeds and favicons in the same way as the meta block.
+#}
+{% block links -%}
+  {{ super() }}
+  <link rel="apple-touch-icon" sizes="180x180" href="/data2xafrica/favicons/apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/data2xafrica/favicons/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/data2xafrica/favicons/favicon-16x16.png">
+  <link rel="manifest" href="/data2xafrica/favicons/site.webmanifest">
+  <link rel="mask-icon" href="/data2xafrica/favicons/safari-pinned-tab.svg" color="#e91e63">
+  <link rel="shortcut icon" href="/data2xafrica/favicons/favicon.ico">
+  <meta name="msapplication-TileColor" content="#e91e63">
+  <meta name="msapplication-config" content="/data2xafrica/favicons/browserconfig.xml">
+  <meta name="theme-color" content="#ffffff">
+{% endblock -%}
+
+
+{#
+  The styles block allows you to add additonal stylesheets to the page in
+  the same way as the meta block. Use super() to include the default
+  stylesheets before or after your own.
+
+  Example:
+
+    {% block styles %}
+      {{ super() }}
+      <link rel="stylesheet" href="/base/css/custom.css" />
+    {% endblock %}
+#}
 {% block styles %}
   {{ super() }}
 
