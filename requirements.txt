@@ -9,7 +9,7 @@
 
 -e git+https://github.com/ckan/ckanext-dcat.git@v1.1.2#egg=ckanext-dcat
 
--e git+https://github.com/ckan/ckanext-pdfview.git@0.0.6#egg=ckanext-pdfview
+-e git+https://github.com/ckan/ckanext-pdfview.git@0.0.7#egg=ckanext-pdfview
 -e git+https://github.com/DavidLemayian/ckanext-gdoc.git#egg=ckanext-gdoc
 -e git+https://github.com/jqnatividad/ckanext-officedocs.git#egg=ckanext-officedocs
 
