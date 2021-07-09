@@ -3,7 +3,7 @@ FROM python:3.6
 
 ENV DEBIAN_FRONTEND noninteractive
 
-ARG CKAN_VERSION=2.9.2
+ARG CKAN_VERSION=2.9.3
 
 # Install Postgres Client
 RUN apt-get -qq update \
