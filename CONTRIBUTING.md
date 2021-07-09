@@ -1,9 +1,9 @@
 # Introduction
 
-You are here to help on [Data2x.AFRICA](https://data2x.africa)? Awesome, feel welcome and read the following 
+You are here to help on [GenderOpenData.org](https://genderopendata.org)? Awesome, feel welcome and read the following 
 sections in order to know what and how to work on something. If you get stuck 
 at any point you can create a ticket on 
-[GitHub](https://github.com/CWRAdvocacy/Data2x.AFRICA/issues/).
+[GitHub](https://github.com/CWRAdvocacy/GenderOpenData/issues/).
 
 All members of our community are expected to follow our 
 [Code of Conduct](CODE_OF_CONDUCT.md). Please make 
@@ -36,7 +36,7 @@ If you're reporting a bug, please include:
 
 #### Writing Documentation
 Did you find a typo? Do you think that something should be clarified? Go ahead 
-and suggest a documentation patch. The Data2x.AFRICA deployment could always use more documentation, 
+and suggest a documentation patch. The GenderOpenData deployment could always use more documentation, 
 whether as part of the official docs, in docstrings, or even on the web in blog 
 posts, wiki, articles, and such.
  
@@ -54,7 +54,7 @@ new feature.
 
 ## Your first contribution
 
-Unsure where to begin contributing to Data2x.AFRICA? You can start by looking through 
+Unsure where to begin contributing to GenderOpenData? You can start by looking through 
 these `beginner` and `help-wanted` issues:
 
 * `Beginner issues` - issues which should only require a few lines of code, and a 
@@ -71,7 +71,7 @@ Once your changes and tests are ready to submit for review:
 
 2. Rebase your changes
 
-    Update your local repository with the most recent code from the main Data2x.AFRICA 
+    Update your local repository with the most recent code from the main GenderOpenData
     repository, and rebase your branch on top of the latest develop branch. 
 
 3. Submit a pull request
@@ -84,7 +84,7 @@ Once your changes and tests are ready to submit for review:
 
     Then sit back and wait. There will probably be discussion about the pull 
     request and, if any changes are needed, we would love to work with you to 
-    get your pull request merged into Data2x.AFRICA.
+    get your pull request merged into GenderOpenData.
 
 ## Code Style
 

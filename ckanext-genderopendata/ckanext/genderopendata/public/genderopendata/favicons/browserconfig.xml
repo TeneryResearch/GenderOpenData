@@ -2,7 +2,7 @@
 <browserconfig>
     <msapplication>
         <tile>
-            <square150x150logo src="/data2xafrica/favicons/mstile-150x150.png"/>
+            <square150x150logo src="/genderopendata/favicons/mstile-150x150.png"/>
             <TileColor>#e91e63</TileColor>
         </tile>
     </msapplication>

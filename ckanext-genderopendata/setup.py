@@ -11,23 +11,23 @@ with open(path.join(here, 'README.md'), encoding='utf-8') as f:
     long_description = f.read()
 
 setup(
-    name='''ckanext-data2xafrica''',
+    name='''ckanext-genderopendata''',
 
     # Versions should comply with PEP440.  For a discussion on single-sourcing
     # the version across setup.py and the project code, see
     # http://packaging.python.org/en/latest/tutorial.html#version
-    version='0.0.1',
+    version='0.0.2',
 
-    description='''The Data2x.AFRICA platform is a volunteer-driven repository for gender data and resources for feminist advocacy and research across the continent. Accessible at https://beta.data2x.africa/''',
+    description='''The GenderOpenData platform is a volunteer-driven repository for gender data and resources for feminist advocacy and research across the continent. Accessible at https://genderopendata.org/''',
     long_description=long_description,
     long_description_content_type="text/markdown",
 
     # The project's main homepage.
-    url='https://github.com/CWRAdvocacy/ckanext-data2xafrica',
+    url='https://github.com/CWRAdvocacy/GenderOpenData',
 
     # Author details
     author='''CWRA''',
-    author_email='''opensource@cwra.africa''',
+    author_email='''tech@cwra.africa''',
 
     # Choose your license
     license='AGPL',
@@ -50,7 +50,7 @@ setup(
 
 
     # What does your project relate to?
-    keywords='''CKAN data2xafrica africa theme gender gender-data cwra ckanext''',
+    keywords='''CKAN genderopendata africa theme gender gender-data cwra ckanext''',
 
     # You can just specify the packages manually here if your project is
     # simple. Or you can use find_packages().
@@ -84,7 +84,7 @@ setup(
     # pip to create the appropriate form of executable for the target platform.
     entry_points='''
         [ckan.plugins]
-        data2xafrica=ckanext.data2xafrica.plugin:Data2XafricaPlugin
+        genderopendata=ckanext.genderopendata.plugin:GenderOpenDataPlugin
 
         [babel.extractors]
         ckan = ckan.lib.extract:extract_ckan

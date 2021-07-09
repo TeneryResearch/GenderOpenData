@@ -21,7 +21,7 @@ services:
     volumes:
       - ./ckan.ini:/ckan.ini
       - ./contrib/ckan/ckan-uwsgi.ini:/ckan-uwsgi.ini
-      - ./ckanext-data2xafrica:/src/ckanext-data2xafrica
+      - ./ckanext-genderopendata:/src/ckanext-genderopendata
       - ckan-filestore:/var/lib/ckan/default
   
   # ckan_gather_consumer:

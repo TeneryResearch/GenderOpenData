@@ -1,14 +1,14 @@
 {
-    "name": "Data2x.AFRICA",
-    "short_name": "Data2x.AFRICA",
+    "name": "GenderOpenData",
+    "short_name": "GenderOpenData",
     "icons": [
         {
-            "src": "/data2xafrica/favicons/android-chrome-192x192.png",
+            "src": "/genderopendata/favicons/android-chrome-192x192.png",
             "sizes": "192x192",
             "type": "image/png"
         },
         {
-            "src": "/data2xafrica/favicons/android-chrome-512x512.png",
+            "src": "/genderopendata/favicons/android-chrome-512x512.png",
             "sizes": "512x512",
             "type": "image/png"
         }
