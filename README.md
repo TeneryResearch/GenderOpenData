@@ -1,4 +1,5 @@
 # GenderOpenData.org
+
 The GenderOpenData platform is a volunteer-driven repository for gender data and resources for feminist advocacy and research across the continent. Accessible at https://genderopendata.org/
 
 ## Getting Started
@@ -7,7 +8,6 @@ The GenderOpenData platform is a volunteer-driven repository for gender data and
 
 - Docker
 - docker-compose
-- Patience (non-tech)
 
 ### Development
 
