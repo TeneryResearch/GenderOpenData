@@ -26,7 +26,7 @@ issues-init:
 
 # CKAN build  // TODO: --no-cache 
 ckan:
-	docker build --build-arg CKAN_VERSION=${CKAN_VERSION} -t cwradvocacy/ckan:latest -t cwradvocacy/ckan:${CKAN_VERSION} contrib/ckan
+	docker build --platform=linux/amd64 --build-arg CKAN_VERSION=${CKAN_VERSION} -t cwradvocacy/ckan:latest -t cwradvocacy/ckan:${CKAN_VERSION} contrib/ckan
 
 ckan-publish:
 	docker push cwradvocacy/ckan:latest
@@ -34,7 +34,7 @@ ckan-publish:
 
 # DB build
 db:
-	docker build -t cwradvocacy/ckan-db:latest -t cwradvocacy/ckan-db:${CKAN_VERSION} contrib/postgresql
+	docker build --platform=linux/amd64 -t cwradvocacy/ckan-db:latest -t cwradvocacy/ckan-db:${CKAN_VERSION} contrib/postgresql
 
 db-publish:
 	docker push cwradvocacy/ckan-db:latest
@@ -42,7 +42,7 @@ db-publish:
 
 # Solr build
 solr:
-	docker build --no-cache --build-arg CKAN_VERSION=${CKAN_VERSION} -t cwradvocacy/ckan-solr:latest -t cwradvocacy/ckan-solr:${CKAN_VERSION} contrib/solr
+	docker build --platform=linux/amd64 --no-cache --build-arg CKAN_VERSION=${CKAN_VERSION} -t cwradvocacy/ckan-solr:latest -t cwradvocacy/ckan-solr:${CKAN_VERSION} contrib/solr
 
 solr-publish:
 	docker push cwradvocacy/ckan-solr:latest
@@ -50,7 +50,7 @@ solr-publish:
 
 # DataPusher build
 datapusher:
-	docker build -t cwradvocacy/ckan-datapusher:latest -t cwradvocacy/ckan-datapusher:0.0.17 contrib/ckan-datapusher
+	docker build --platform=linux/amd64 -t cwradvocacy/ckan-datapusher:latest -t cwradvocacy/ckan-datapusher:0.0.17 contrib/ckan-datapusher
 
 datapusher-publish:
 	docker push cwradvocacy/ckan-datapusher:latest
