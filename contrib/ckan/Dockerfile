@@ -1,9 +1,8 @@
-
-FROM python:3.6
+FROM python:3.7
 
 ENV DEBIAN_FRONTEND noninteractive
 
-ARG CKAN_VERSION=2.9.3
+ARG CKAN_VERSION=2.9.4
 
 # Install Postgres Client
 RUN apt-get -qq update \

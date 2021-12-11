@@ -1,4 +1,4 @@
-FROM cwradvocacy/ckan:2.9.3
+FROM cwradvocacy/ckan:2.9.4
 
 WORKDIR /
 ADD requirements.txt /requirements.txt
