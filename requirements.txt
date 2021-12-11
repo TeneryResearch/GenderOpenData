@@ -11,7 +11,7 @@
 
 -e git+https://github.com/ckan/ckanext-pdfview.git@0.0.7#egg=ckanext-pdfview
 -e git+https://github.com/DavidLemayian/ckanext-gdoc.git#egg=ckanext-gdoc
--e git+https://github.com/jqnatividad/ckanext-officedocs.git#egg=ckanext-officedocs
+-e git+https://github.com/DavidLemayian/ckanext-officedocs.git#egg=ckanext-officedocs
 
 
 -e git+https://github.com/okfn/ckanext-sentry.git@d3b1d1cf1f975b3672891012e6c75e176497db8f#egg=ckanext-sentry
