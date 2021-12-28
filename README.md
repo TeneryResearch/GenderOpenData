@@ -15,6 +15,12 @@ The GenderOpenData platform is a volunteer-driven repository for gender data and
 2. start up everything with `docker-compose up datapusher`
 3. start coding
 
+**Additional steps:**
+
+4. `make bash` to enter the bash
+5. `ckan search-index rebuild`  to index the data
+6. `ckan seed gov && ckan seed user` to seed the data
+
 ---
 
 ## License
