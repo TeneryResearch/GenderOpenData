@@ -43,7 +43,7 @@ services:
       - postgres-data:/var/lib/postgresql/data
   
   solr:
-    image: cwradvocacy/ckan-solr:2.9.2
+    image: cwradvocacy/ckan-solr:2.9.4
     ports:
         - "8983:8983"
     volumes:
