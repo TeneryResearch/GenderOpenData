@@ -1,9 +1,59 @@
 {% ckan_extends %}
 
-{% block footer_attribution %}
-  <img
-    class="img-responsive cwra-logo"
-    src="/genderopendata/assets/img/logo/cwra-footer-white.svg"
-    alt="gender open data logo white"
-    />
+{% block footer_content %}
+  <div class="row">
+    <div class="col-sm-6 py-2">
+      <p>
+        <a href="https://cwra.africa/" target="_blank">
+          <img
+            class="img-responsive cwra-logo"
+            src="/genderopendata/assets/img/logo/cwra-footer-white.svg"
+            alt="gender open data logo white"
+          />
+        </a>
+      </p>
+    </div>
+    <div class="col-sm-6">
+      {% block footer_icons %}
+        <ul class="list-unstyled list-inline" style="text-align: right;">
+          {% block footer_icons_social %}
+            <li><a href="https://twitter.com/GenderOpenData" target="_blank" rel="noopener noreferrer"><i class="fa fa-twitter-square fa-2x"></i></a></li>
+            <li><a href="https://www.facebook.com/GenderOpenData" target="_blank" rel="noopener noreferrer"><i class="fa fa-facebook-square fa-2x"></i></a></li>
+            <li><a href="https://github.com/CWRAdvocacy" target="_blank" rel="noopener noreferrer"><i class="fa fa-github-square fa-2x"></i></a></li>
+          {% endblock %}
+        </ul>
+      {% endblock %}
+    </div>
+  </div>
+
+  <hr style="opacity: 0.8;"/>
+
+  <div class="row">
+    <div class="col-sm-8">
+      <p>
+        {% trans %}The Gender Open Data is a project of the <a href="https://cwra.africa/" target="_blank">Center for Women Rights Advocacy (CWRA)</a> and made possible by volunteers, donors, and partners. We help make the hidden visible.{% endtrans %}
+      </p>
+      <p>
+        <small>
+          {% trans %}Content on this site, made by CWRA, is licensed under a <a href="https://creativecommons.org/licenses/by/4.0/" target="_blank" rel="noopener noreferrer">Creative Commons Attribution 4.0 International License</a>. Source code is available under the <a href="https://choosealicense.com/licenses/mit/" target="_blank" rel="noopener noreferrer">MIT license</a>.{% endtrans %}
+        </small>
+      </p>
+    </div>
+    <div class="col-sm-4">
+      <p>
+        <small>
+          <a href="/about">About</a>
+          &nbsp;&nbsp;&nbsp;&nbsp;
+          <a href="/pages/contact">Contact</a>
+          &nbsp;&nbsp;&nbsp;&nbsp;
+          <a href="/pages/privacy">Privacy</a>
+          &nbsp;&nbsp;&nbsp;&nbsp;
+          <a href="/pages/terms">Terms</a>
+        </small>
+      </p>
+      {% block footer_lang %}
+        {% snippet "snippets/language_selector.html" %}
+      {% endblock %}
+    </div>
+
 {% endblock %}

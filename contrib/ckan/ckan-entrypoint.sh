@@ -74,4 +74,7 @@ ckan --config "$CONFIG" db init
 # Datastore permissions
 ckan --config "$CONFIG" datastore set-permissions | psql --set ON_ERROR_STOP=1
 
+# Pages init
+ckan --config "$CONFIG" pages initdb
+
 exec "$@"
