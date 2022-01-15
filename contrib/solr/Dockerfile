@@ -1,4 +1,4 @@
-FROM solr:6.6.5
+FROM solr:6.6.6
 
 ## Taken from https://github.com/ckan/ckan/blob/2.9/contrib/docker/solr/Dockerfile
 # Updated the ARG values
