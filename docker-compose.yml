@@ -23,9 +23,10 @@ services:
       - ./ckan.ini:/ckan.ini
       - ./contrib/ckan/ckan-dev-uwsgi.ini:/ckan-uwsgi.ini
       - ./contrib/ckan/ckan-dev-entrypoint.sh:/ckan-dev-entrypoint.sh
+      - ./contrib/ckan/ckan-entrypoint.sh:/ckan-entrypoint.sh
       - ./ckanext-genderopendata:/src/ckanext-genderopendata
-      - ckan-filestore:/var/lib/ckan/default
       - ${CKANEXT_S3FILESTORE_DIR}:/src/ckanext-s3filestore
+      - ckan-filestore:/var/lib/ckan/default
     sysctls:
       net.core.somaxconn: 1024
 
