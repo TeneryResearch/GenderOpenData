@@ -77,4 +77,7 @@ ckan --config "$CONFIG" datastore set-permissions | psql --set ON_ERROR_STOP=1
 # Pages init
 ckan --config "$CONFIG" pages initdb
 
+# Set users
+chown -R www-data:www-data /var/lib/ckan
+
 exec "$@"

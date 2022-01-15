@@ -15,7 +15,7 @@ ADD Procfile /Procfile
 
 # GenderOpenData extension
 ADD ./ckanext-genderopendata /src/ckanext-genderopendata
-RUN cd /src/ckanext-genderopendata/ && python setup.py develop
+RUN pip install -e /src/ckanext-genderopendata/
 
 EXPOSE 8080/tcp
 

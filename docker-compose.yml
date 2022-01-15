@@ -15,14 +15,19 @@ services:
     ports:
       - "8080:8080"
       - "5000:5000"
-    command: ["uwsgi", "-i", "/ckan-uwsgi.ini"]
+    entrypoint: /ckan-dev-entrypoint.sh
+    command: ["uwsgi", "-i", "/ckan-uwsgi.ini", "-l", "40"]
     env_file:
       - .env
     volumes:
       - ./ckan.ini:/ckan.ini
       - ./contrib/ckan/ckan-uwsgi.ini:/ckan-uwsgi.ini
+      - ./contrib/ckan/ckan-dev-entrypoint.sh:/ckan-dev-entrypoint.sh
       - ./ckanext-genderopendata:/src/ckanext-genderopendata
       - ckan-filestore:/var/lib/ckan/default
+      - ${CKANEXT_S3FILESTORE_DIR}:/src/ckanext-s3filestore
+    sysctls:
+      net.core.somaxconn: 1024
 
   datapusher:
     build: contrib/ckan-datapusher

@@ -8,12 +8,14 @@ The GenderOpenData platform is a volunteer-driven repository for gender data and
 
 - Docker
 - docker-compose
+- [direnv](https://direnv.net/)
 
 ### Development
 
-1. copy `.env.tmpl` to `.env` and edit appropriately
-2. start up everything with `docker-compose up datapusher`
-3. start coding
+1. copy `.env.tmpl` & `.envrc.tmpl` to `.env` & `.envrc` and edit appropriately
+2. run `direnv allow`
+3. start up everything with `docker-compose up datapusher`
+4. start coding
 
 **Additional steps:**
 
@@ -22,9 +24,7 @@ The GenderOpenData platform is a volunteer-driven repository for gender data and
 6. `ckan seed gov && ckan seed user` to seed the data
 
 
-**PS: To Reload Server:**
-
-Save / touch `ckan-uwsgi.ini` to reload the server
+**PS: To Reload Server:** Save / touch `ckan-uwsgi.ini` to reload the server
 
 
 ---
