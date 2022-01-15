@@ -130,3 +130,6 @@ dmypy.json
 
 # Custom
 DEPLOYMENT.md
+
+# envrc
+.envrc
