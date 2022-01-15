@@ -55,4 +55,3 @@ datapusher:
 datapusher-publish:
 	docker push cwradvocacy/ckan-datapusher:latest
 	docker push cwradvocacy/ckan-datapusher:0.0.17
-
