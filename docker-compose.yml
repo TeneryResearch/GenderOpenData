@@ -21,7 +21,7 @@ services:
       - .env
     volumes:
       - ./ckan.ini:/ckan.ini
-      - ./contrib/ckan/ckan-uwsgi.ini:/ckan-uwsgi.ini
+      - ./contrib/ckan/ckan-dev-uwsgi.ini:/ckan-uwsgi.ini
       - ./contrib/ckan/ckan-dev-entrypoint.sh:/ckan-dev-entrypoint.sh
       - ./ckanext-genderopendata:/src/ckanext-genderopendata
       - ckan-filestore:/var/lib/ckan/default
