@@ -7,7 +7,7 @@ web-build:
 	docker-compose build web
 web-build-nc:
 	docker-compose build --no-cache web
-bash:
+web-bash:
 	docker-compose exec web bash
 
 

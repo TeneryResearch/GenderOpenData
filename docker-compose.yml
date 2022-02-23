@@ -49,9 +49,12 @@ services:
       - postgres-data:/var/lib/postgresql/data
   
   solr:
-    image: cwradvocacy/ckan-solr:2.9.4
+    build:
+      context: contrib/solr
+      args:
+        - CKAN_VERSION=${CKAN_VERSION}
     ports:
-        - "8983:8983"
+      - "8983:8983"
     volumes:
       - solr-data:/opt/solr/server/solr/ckan
 
