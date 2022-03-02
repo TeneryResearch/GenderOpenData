@@ -37,7 +37,7 @@ Built by [Tenery Research](https://tenery.cc/) for [CWRA](https://cwra.africa/)
 
 MIT License
 
-Copyright (c) 2021 Center for Women's Rights Advocacy
+Copyright (c) 2021 - 2022 Center for Women's Rights Advocacy
 
 Permission is hereby granted, free of charge, to any person obtaining a copy
 of this software and associated documentation files (the "Software"), to deal
