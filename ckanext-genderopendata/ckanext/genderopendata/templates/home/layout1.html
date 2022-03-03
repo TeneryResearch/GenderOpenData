@@ -1,13 +1,13 @@
 <div role="main">
   <div class="main hero">
     <div class="container">
-      <div class="row">
-        <div class="col-md-6">
+      <div class="row row1">
+        <div class="col-md-6 col1">
           {% block promoted %}
             {% snippet 'home/snippets/promoted.html' %}
           {% endblock %}
         </div>
-        <div class="col-md-6">
+        <div class="col-md-6 col2">
           {% block search %}
             {% snippet 'home/snippets/search.html' %}
           {% endblock %}
@@ -15,11 +15,10 @@
       </div>
     </div>
   </div>
-  
-  <div class="main module-feeds" style="padding-top: 30px;">
-    <div class="container">
-      <div class="row">
-        <div class="col-md-6" style="padding-top: 20px;">
+  <div class="main">
+    <div class="container" style="padding-top: 30px;">
+      <div class="row row2">
+        <div class="col-md-6 col1" style="padding-top: 20px;">
           {# Note: this featured_group block is used as an example in the theming
              tutorial in the docs! If you change this code, be sure to check
              whether you need to update the docs. #}
@@ -29,7 +28,7 @@
           {% endblock %}
           {# End template block example. #}
         </div>
-        <div class="col-md-6" style="padding-top: 20px;">
+        <div class="col-md-6 col2" style="padding-top: 20px;">
           {% block featured_organization %}
             {% snippet 'home/snippets/featured_organization.html' %}
           {% endblock %}
