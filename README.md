@@ -23,9 +23,9 @@ Built by [Tenery Research](https://tenery.cc/) for [CWRA](https://cwra.africa/)
 
 **Additional steps:**
 
-4. `make bash` to enter the bash
-5. `ckan search-index rebuild`  to index the data
+5. `make bash` to enter the bash
 6. `ckan seed gov && ckan seed user` to seed the data
+7. `ckan search-index rebuild`  to index the data 
 
 
 **PS: To Reload Server:** Save / touch `ckan-uwsgi.ini` to reload the server

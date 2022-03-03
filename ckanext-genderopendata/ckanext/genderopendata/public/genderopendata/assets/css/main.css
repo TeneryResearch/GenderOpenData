@@ -5,8 +5,38 @@
 }
 
 body {
-  background-color: #eee;
+  background: #ffffff;
 }
+
+/* -------------------------------------------------- */
+/* Common elements */
+/* -------------------------------------------------- */
+.main {
+  background: #eee;
+  min-height: 0;
+}
+
+.box {
+  box-shadow: none;
+}
+
+/* Buttons */
+.btn-primary {
+  background-color: #C722AE;
+  border-color: #8B1779;
+}
+.btn-primary:hover, .btn-primary:focus, .btn-primary.focus,
+  .btn-primary:active, .btn-primary.active, .open > .dropdown-toggle.btn-primary,
+  .btn-primary:active:hover, .btn-primary:active:focus {
+  background-color: #8B1779;
+  border-color: #8B1779;
+}
+
+/* Links */
+a {
+  color: #8B1779;
+}
+
 
 /* -------------------------------------------------- */
 /* Header */
@@ -60,7 +90,8 @@ body {
   background: #ffffff;
 }
 .homepage .hero {
-  padding-bottom: 40px;
+  padding-bottom: 50px !important;
+  padding-top: 20px !important;
 }
 .featured .media-image img {
   max-width: 100%;
@@ -81,6 +112,15 @@ a.tag:hover {
   border-color: #8B1779;
   background-color: #D24EBE;
   box-shadow: #D24EBE;
+}
+
+.homepage .main {
+  padding: 50px 0;
+}
+
+/* Organisation list */
+.homepage .module-heading {
+  background-color: #ffffff;
 }
 
 /* -------------------------------------------------- */
@@ -104,24 +144,3 @@ a.tag:hover {
 
 
 
-/* -------------------------------------------------- */
-/* Other elements */
-/* -------------------------------------------------- */
-
-.box {
-  box-shadow: none;
-}
-
-/* Buttons */
-.btn-primary {
-  background-color: #C722AE;
-  border-color: #8B1779;
-}
-.btn-primary:hover {
-  background-color: #8B1779;
-}
-
-/* Links */
-a {
-  color: #8B1779;
-}
