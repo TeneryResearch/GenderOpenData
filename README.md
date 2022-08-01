@@ -35,7 +35,7 @@ Built by [Tenery Research](https://tenery.cc/) for [CWRA](https://cwra.africa/)
 
 ## License
 
-The GenderOpenData platform is a volunteer-driven data platform.
+The GenderOpenData platform is a volunteer-driven data platform.  
 Copyright (c) 2021 - 2022 Center for Women's Rights Advocacy
 
 This program is free software: you can redistribute it and/or modify
