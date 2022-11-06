@@ -1,14 +1,14 @@
-FROM cwradvocacy/ckan:2.9.5
+FROM cwradvocacy/ckan:2.9.7
 
 WORKDIR /
 ADD requirements.txt /requirements.txt
 
 RUN pip install uwsgi
 
-RUN pip install -q -r /requirements.txt && \
-    pip install -q -r /src/ckanext-s3filestore/requirements.txt && \
-    pip install -q -r /src/ckanext-dcat/requirements.txt && \
-    pip install -q -r /src/ckanext-harvest/pip-requirements.txt
+RUN pip install -r /requirements.txt && \
+    pip install -r /src/ckanext-s3filestore/requirements.txt && \
+    pip install -r /src/ckanext-dcat/requirements.txt && \
+    pip install -r /src/ckanext-harvest/pip-requirements.txt
 
 ADD ckan.ini /ckan.ini
 ADD ./contrib/ckan/ckan-uwsgi.ini /ckan-uwsgi.ini

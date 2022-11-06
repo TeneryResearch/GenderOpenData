@@ -1,4 +1,4 @@
-FROM solr:6.6.6
+FROM solr:8.11.2
 
 ## Taken from https://github.com/ckan/ckan/blob/2.9/contrib/docker/solr/Dockerfile
 # Updated the ARG values
@@ -8,26 +8,29 @@ ARG CKAN_VERSION=${CKAN_VERSION}
 ENV SOLR_CORE ckan
 
 # Create Directories
-RUN mkdir -p /opt/solr/server/solr/$SOLR_CORE/conf
-RUN mkdir -p /opt/solr/server/solr/$SOLR_CORE/data
+RUN mkdir -p /var/solr/data/$SOLR_CORE/conf
+RUN mkdir -p /var/solr/data/$SOLR_CORE/data
 
 # Adding Files
 ADD https://raw.githubusercontent.com/ckan/ckan/ckan-${CKAN_VERSION}/contrib/docker/solr/solrconfig.xml \
-https://raw.githubusercontent.com/ckan/ckan/ckan-${CKAN_VERSION}/ckan/config/solr/schema.xml \
-https://raw.githubusercontent.com/apache/lucene-solr/releases/lucene-solr/6.6.6/solr/server/solr/configsets/basic_configs/conf/currency.xml \
-https://raw.githubusercontent.com/apache/lucene-solr/releases/lucene-solr/6.6.6/solr/server/solr/configsets/basic_configs/conf/synonyms.txt \
-https://raw.githubusercontent.com/apache/lucene-solr/releases/lucene-solr/6.6.6/solr/server/solr/configsets/basic_configs/conf/stopwords.txt \
-https://raw.githubusercontent.com/apache/lucene-solr/releases/lucene-solr/6.6.6/solr/server/solr/configsets/basic_configs/conf/protwords.txt \
-https://raw.githubusercontent.com/apache/lucene-solr/releases/lucene-solr/6.6.6/solr/server/solr/configsets/data_driven_schema_configs/conf/elevate.xml \
-/opt/solr/server/solr/$SOLR_CORE/conf/
+https://raw.githubusercontent.com/apache/lucene-solr/releases/lucene-solr/8.11.2/solr/server/solr/configsets/sample_techproducts_configs/conf/currency.xml \
+https://raw.githubusercontent.com/apache/lucene-solr/releases/lucene-solr/8.11.2/solr/server/solr/configsets/sample_techproducts_configs/conf/elevate.xml \
+https://raw.githubusercontent.com/apache/lucene-solr/releases/lucene-solr/8.11.2/solr/server/solr/configsets/sample_techproducts_configs/conf/lang/stopwords_en.txt \
+https://raw.githubusercontent.com/apache/lucene-solr/releases/lucene-solr/8.11.2/solr/server/solr/configsets/sample_techproducts_configs/conf/lang/stopwords_fr.txt \
+https://raw.githubusercontent.com/apache/lucene-solr/releases/lucene-solr/8.11.2/solr/server/solr/configsets/sample_techproducts_configs/conf/protwords.txt \
+https://raw.githubusercontent.com/apache/lucene-solr/releases/lucene-solr/8.11.2/solr/server/solr/configsets/sample_techproducts_configs/conf/synonyms.txt \
+https://raw.githubusercontent.com/apache/lucene-solr/releases/lucene-solr/8.11.2/solr/server/solr/configsets/sample_techproducts_configs/conf/lang/contractions_fr.txt \
+/var/solr/data/$SOLR_CORE/conf/
+
+ADD ./schema.xml /var/solr/data/$SOLR_CORE/conf/
 
 # Create Core.properties
-RUN echo name=$SOLR_CORE > /opt/solr/server/solr/$SOLR_CORE/core.properties
+RUN echo name=$SOLR_CORE > /var/solr/data/$SOLR_CORE/core.properties
 
 # Giving ownership to Solr
 
 USER root
-RUN chown -R $SOLR_USER:$SOLR_USER /opt/solr/server/solr/$SOLR_CORE
+RUN chown -R $SOLR_USER:$SOLR_USER /var/solr/data/$SOLR_CORE
 
 # User
 USER $SOLR_USER:$SOLR_USER

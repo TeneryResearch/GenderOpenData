@@ -1,4 +1,4 @@
-FROM python:3.7
+FROM python:3.9
 
 ENV DEBIAN_FRONTEND noninteractive
 ENV LC_ALL=C
@@ -8,7 +8,7 @@ WORKDIR /
 # Issue: setuptools - https://github.com/pypa/setuptools/issues/2017
 RUN pip install -U pip 'setuptools==45'
 
-RUN pip install -e git+https://github.com/ckan/datapusher.git@0.0.17#egg=datapusher
+RUN pip install -e git+https://github.com/ckan/datapusher.git@0.0.18#egg=datapusher
 RUN pip install -r /src/datapusher/requirements.txt \
     && pip install /src/datapusher/
 

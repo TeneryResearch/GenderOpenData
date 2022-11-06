@@ -50,8 +50,8 @@ solr-publish:
 
 # DataPusher
 datapusher:
-	docker build --platform=linux/amd64 -t cwradvocacy/ckan-datapusher:latest -t cwradvocacy/ckan-datapusher:0.0.17 contrib/ckan-datapusher
+	docker build --platform=linux/amd64 -t cwradvocacy/ckan-datapusher:latest -t cwradvocacy/ckan-datapusher:0.0.18 contrib/ckan-datapusher
 
 datapusher-publish:
 	docker push cwradvocacy/ckan-datapusher:latest
-	docker push cwradvocacy/ckan-datapusher:0.0.17
+	docker push cwradvocacy/ckan-datapusher:0.0.18
