@@ -1,4 +1,4 @@
-FROM cwradvocacy/ckan:2.9.7
+FROM cwradvocacy/ckan:2.9.7 as base
 
 WORKDIR /
 ADD requirements.txt /requirements.txt
@@ -15,10 +15,15 @@ ADD ./contrib/ckan/ckan-uwsgi.ini /ckan-uwsgi.ini
 ADD ./contrib/ckan/ckan-wsgi.py /ckan-wsgi.py
 ADD Procfile /Procfile
 
-# GenderOpenData extension
+# genderopendata ckan extension
 ADD ./ckanext-genderopendata /src/ckanext-genderopendata
 RUN pip install -e /src/ckanext-genderopendata/
 
 EXPOSE 8080/tcp
 
 CMD ["uwsgi", "-i", "/ckan-uwsgi.ini"]
+
+
+# dev
+FROM base as dev
+RUN pip install flask-debugtoolbar

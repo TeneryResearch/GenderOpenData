@@ -7,7 +7,9 @@ volumes:
 
 services:
   web:
-    build: .
+    build:
+      context: .
+      target: dev
     depends_on:
       - db
       - solr
@@ -16,19 +18,19 @@ services:
       - "8080:8080"
       - "5000:5000"
     entrypoint: /ckan-dev-entrypoint.sh
-    command: ["uwsgi", "-i", "/ckan-uwsgi.ini", "-l", "40"]
+    command: ["ckan", "-c", "/ckan.ini", "run", "--host", "0.0.0.0", "-t"]
     env_file:
       - .env
     volumes:
-      - ./ckan.ini:/ckan.ini
-      - ./contrib/ckan/ckan-dev-uwsgi.ini:/ckan-uwsgi.ini
+      - ./ckan-dev.ini:/ckan.ini
+      - ./contrib/ckan/ckan-uwsgi.ini:/ckan-uwsgi.ini
       - ./contrib/ckan/ckan-dev-entrypoint.sh:/ckan-dev-entrypoint.sh
       - ./contrib/ckan/ckan-entrypoint.sh:/ckan-entrypoint.sh
       - ./ckanext-genderopendata:/src/ckanext-genderopendata
       - ${CKANEXT_S3FILESTORE_DIR}:/src/ckanext-s3filestore
       - ckan-filestore:/var/lib/ckan/default
     sysctls:
-      net.core.somaxconn: 1024
+      net.core.somaxconn: 65536
 
   datapusher:
     build: contrib/ckan-datapusher
