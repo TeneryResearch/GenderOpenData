@@ -18,4 +18,4 @@
 
 -e git+https://github.com/ckan/ckanext-pages.git@b9f7e49db5c036c602b1bff7050e91eccdc00b53#egg=ckanext-pages
 
--e git+https://github.com/ckan/ckanext-harvest.git@v1.4.1#egg=ckanext-harvest
+-e git+https://github.com/ckan/ckanext-harvest.git@v1.4.2#egg=ckanext-harvest
