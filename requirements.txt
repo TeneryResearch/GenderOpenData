@@ -16,6 +16,6 @@
 
 -e git+https://github.com/okfn/ckanext-sentry.git@d3b1d1cf1f975b3672891012e6c75e176497db8f#egg=ckanext-sentry
 
--e git+https://github.com/ckan/ckanext-pages.git@v0.5.0#egg=ckanext-pages
+-e git+https://github.com/ckan/ckanext-pages.git@v0.5.1#egg=ckanext-pages
 
 -e git+https://github.com/ckan/ckanext-harvest.git@v1.4.2#egg=ckanext-harvest
