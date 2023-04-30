@@ -1,9 +1,7 @@
-FROM cwradvocacy/ckan:2.9.7 as base
+FROM cwradvocacy/ckan:2.10.0 as base
 
 WORKDIR /
 ADD requirements.txt /requirements.txt
-
-RUN pip install uwsgi
 
 RUN pip install -r /requirements.txt && \
     pip install -r /src/ckanext-s3filestore/requirements.txt && \
@@ -26,4 +24,11 @@ CMD ["uwsgi", "-i", "/ckan-uwsgi.ini"]
 
 # dev
 FROM base as dev
-RUN pip install flask-debugtoolbar
+RUN pip install -r /src/ckan/dev-requirements.txt
+
+RUN pip install -e /src/ckanext-s3filestore
+RUN pip install -e /src/ckanext-sentry
+RUN pip install -e /src/ckanext-genderopendata
+
+# Set users
+RUN chown -R www-data:www-data /src

@@ -1,12 +1,12 @@
-FROM python:3.9
+FROM python:3.10
 
 ENV DEBIAN_FRONTEND noninteractive
 
-ARG CKAN_VERSION=2.9.7
+ARG CKAN_VERSION=2.10.0
 
 # Install Postgres Client
 RUN apt-get -qq update \
-    && apt-get -qq install -y --no-install-recommends apt-utils postgresql-client \
+    && apt-get -qq install -y --no-install-recommends apt-utils po“stgresql-client \
     && apt-get clean && rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/*
 # Default Postgres auth
 ENV PGHOST db

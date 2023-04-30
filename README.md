@@ -2,7 +2,7 @@
 
 The GenderOpenData platform is a volunteer-driven repository for gender data and
 resources for feminist advocacy and research across the continent. Accessible at
-https://genderopendata.org/
+<https://genderopendata.org/>
 
 Built by [Tenery Research](https://tenery.cc/) for [CWRA](https://cwra.africa/)
 
@@ -11,25 +11,32 @@ Built by [Tenery Research](https://tenery.cc/) for [CWRA](https://cwra.africa/)
 **Requirements:**
 
 - Docker
-- docker-compose
 - [direnv](https://direnv.net/)
 
 ### Development
 
 1. copy `.env.tmpl` & `.envrc.tmpl` to `.env` & `.envrc` and edit appropriately
 2. run `direnv allow`
-3. start up everything with `docker-compose up datapusher`
+3. start up everything with `make web`
 4. start coding
 
 **Additional steps:**
 
-5. `make bash` to enter the bash
-6. `ckan seed gov && ckan seed user` to seed the data
-7. `ckan search-index rebuild`  to index the data 
+1. `make web-bash` to enter the bash
+2. create fake data:
 
+    ```sh
+    ckan generate fake-data organization -n 5
+    ckan generate fake-data dataset -n 5 --owner_org=<org1.id>
+    ckan generate fake-data dataset -n 5 --owner_org=<org2.id>
+    ckan generate fake-data dataset -n 5 --owner_org=<org3.id>
+    ckan generate fake-data dataset -n 5 --owner_org=<org4.id>
+    ckan generate fake-data dataset -n 5 --owner_org=<or5.id>
+    ```
+
+3. `ckan search-index rebuild`  to index the data
 
 **PS: To Reload Server:** Save / touch `ckan-uwsgi.ini` to reload the server
-
 
 ---
 

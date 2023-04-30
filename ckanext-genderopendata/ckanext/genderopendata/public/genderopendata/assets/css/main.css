@@ -20,7 +20,7 @@ body {
   box-shadow: none;
 }
 
-/* Buttons */
+/* buttons */
 .btn-primary {
   background-color: #C722AE;
   border-color: #8B1779;
@@ -32,14 +32,14 @@ body {
   border-color: #8B1779;
 }
 
-/* Links */
+/* links */
 a {
   color: #8B1779;
 }
 
 
 /* -------------------------------------------------- */
-/* Header */
+/* header */
 /* -------------------------------------------------- */
 .account-masthead {
   background-color: #D24EBE;
@@ -57,14 +57,14 @@ a {
   background-color: #8B1779;
 }
 
-/* Navbar */
+/* navbar */
 .masthead {
   background: #ffffff;
 }
-.masthead .nav > li > a {
+.masthead .main-navbar ul li a {
   color: #333333;
 }
-.masthead .navigation .nav-pills li a:hover, .masthead .navigation .nav-pills li a:focus, .masthead .navigation .nav-pills li.active a {
+.masthead .main-navbar ul li:hover a, .masthead .main-navbar ul li:focus a, .masthead .main-navbar ul li.active a {
   color: #ffffff;
   background-color: #D24EBE;
 }
@@ -72,9 +72,9 @@ a {
   color: #333333;
 }
 
-/* -------------------------------------------------- */
-/* Main */
-/* -------------------------------------------------- */
+/* ------------------------------------------------------------------------------------------------ */
+/* main */
+/* ------------------------------------------------------------------------------------------------ */
 [role=main] {
   padding: 0 !important;
 }
@@ -123,12 +123,13 @@ a.tag:hover {
   background-color: #ffffff;
 }
 
-/* -------------------------------------------------- */
-/* Footer */
-/* -------------------------------------------------- */
+/* ------------------------------------------------------------------------------------------------ */
+/* footer */
+/* ------------------------------------------------------------------------------------------------ */
 .site-footer {
   padding: 50px 0;
   background: #424242;
+  color: #CCDEE3;
 }
 .site-footer a {
   color: #ffffff;
@@ -138,7 +139,7 @@ a.tag:hover {
 }
 .site-footer .cwra-logo {
   width: 150px;
-  margin-bottom: 15px;
+  margin: 10px 0;
   opacity: 0.9;
 }
 

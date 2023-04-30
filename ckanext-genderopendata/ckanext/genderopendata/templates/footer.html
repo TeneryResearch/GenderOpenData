@@ -2,31 +2,31 @@
 
 {% block footer_content %}
   <div class="row">
-    <div class="col-sm-6 py-2">
-      <p>
-        <a href="https://cwra.africa/" target="_blank">
+    <div class="col-sm-6 d-flex justify-content-center align-items-center justify-content-sm-start">
+        <a href="https://cwra.africa/" target="_blank" class="d-flex">
           <img
             class="img-responsive cwra-logo"
             src="/genderopendata/assets/img/logo/cwra-footer-white.svg"
             alt="gender open data logo white"
           />
         </a>
-      </p>
     </div>
-    <div class="col-sm-6">
+    <div class="d-sm-none mb-2"></div>
+    <div class="col-sm-6 d-flex justify-content-center align-items-center justify-content-sm-end">
       {% block footer_icons %}
         <ul class="list-unstyled list-inline" style="text-align: right;">
           {% block footer_icons_social %}
-            <li><a href="https://twitter.com/GenderOpenData" target="_blank" rel="noopener noreferrer"><i class="fa fa-twitter-square fa-2x"></i></a></li>
-            <li><a href="https://www.facebook.com/GenderOpenData" target="_blank" rel="noopener noreferrer"><i class="fa fa-facebook-square fa-2x"></i></a></li>
-            <li><a href="https://github.com/CWRAdvocacy" target="_blank" rel="noopener noreferrer"><i class="fa fa-github-square fa-2x"></i></a></li>
+            <li class="list-inline-item"><a href="https://twitter.com/GenderOpenData" target="_blank" rel="noopener noreferrer"><i class="fa-brands fa-square-twitter fa-2xl"></i></a></li>
+            <li class="list-inline-item"><a href="https://www.facebook.com/GenderOpenData" target="_blank" rel="noopener noreferrer"><i class="fa-brands fa-square-facebook fa-2xl"></i></a></li>
+            <li class="list-inline-item"><a href="https://github.com/CWRAdvocacy" target="_blank" rel="noopener noreferrer"><i class="fa-brands fa-square-github fa-2xl"></i></a></li>
           {% endblock %}
         </ul>
       {% endblock %}
     </div>
   </div>
+  <div></div>
 
-  <hr style="opacity: 0.8;"/>
+  <hr style="opacity: 0.8;" class="my-4"/>
 
   <div class="row">
     <div class="col-sm-8">
@@ -55,5 +55,6 @@
         {% snippet "snippets/language_selector.html" %}
       {% endblock %}
     </div>
+  </div>
 
 {% endblock %}
