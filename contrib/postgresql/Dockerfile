@@ -1,4 +1,4 @@
-FROM postgis/postgis:11-3.2
+FROM postgis/postgis:13-3.3
 
 # Customize default user/pass/db
 ENV POSTGRES_DB ckan_default

@@ -5,14 +5,14 @@ ENV LC_ALL=C
 
 WORKDIR /
 
-# Issue: setuptools - https://github.com/pypa/setuptools/issues/2017
+# issue: setuptools - https://github.com/pypa/setuptools/issues/2017
 RUN pip install -U pip 'setuptools==45'
 
-RUN pip install -e git+https://github.com/ckan/datapusher.git@0.0.18#egg=datapusher
+RUN pip install -e git+https://github.com/ckan/datapusher.git@0.0.19#egg=datapusher
 RUN pip install -r /src/datapusher/requirements.txt \
     && pip install /src/datapusher/
 
-# For Production
+# for production
 RUN pip install uwsgi
 ADD ./datapusher-uwsgi.ini /datapusher-uwsgi.ini
 ADD ./Procfile /Procfile

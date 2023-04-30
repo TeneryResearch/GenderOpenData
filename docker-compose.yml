@@ -1,9 +1,10 @@
-version: "3.9"
+version: "3.8"
 
 volumes:
   postgres-data: {}
   solr-data: {}
   ckan-filestore: {}
+  redis-data: {}
 
 services:
   web:
@@ -17,18 +18,17 @@ services:
     ports:
       - "8080:8080"
       - "5000:5000"
-    entrypoint: /ckan-dev-entrypoint.sh
     command: ["ckan", "-c", "/ckan.ini", "run", "--host", "0.0.0.0", "-t"]
     env_file:
       - .env
     volumes:
       - ./ckan-dev.ini:/ckan.ini
       - ./contrib/ckan/ckan-uwsgi.ini:/ckan-uwsgi.ini
-      - ./contrib/ckan/ckan-dev-entrypoint.sh:/ckan-dev-entrypoint.sh
       - ./contrib/ckan/ckan-entrypoint.sh:/ckan-entrypoint.sh
       - ./ckanext-genderopendata:/src/ckanext-genderopendata
       - ${CKANEXT_S3FILESTORE_DIR}:/src/ckanext-s3filestore
       - ckan-filestore:/var/lib/ckan/default
+      - ${CKANEXT_SENTRY_DIR}:/src/ckanext-sentry
     sysctls:
       net.core.somaxconn: 65536
 
@@ -51,12 +51,22 @@ services:
       - postgres-data:/var/lib/postgresql/data
   
   solr:
-    image: cwradvocacy/ckan-solr:${CKAN_VERSION}
+    image: ckan/ckan-solr:2.10-spatial
+    shm_size: '1g'
     ports:
       - "8983:8983"
     volumes:
-      - solr-data:/var/solr/data/ckan
+      - solr-data:/var/solr
+    restart: unless-stopped
+    healthcheck:
+      test: ["CMD", "wget", "-qO", "/dev/null", "http://localhost:8983/solr/"]
 
   redis:
-    image: redis:6.2.7
+    image: redis:7
+    platform: linux/arm64/v8
+    volumes:
+      - redis-data:/data
+    restart: unless-stopped
+    healthcheck:
+      test: ["CMD", "redis-cli", "-e", "QUIT"]
   

@@ -81,6 +81,6 @@ ckan --config "$CONFIG" pages initdb
 chown -R www-data:www-data /var/lib/ckan
 
 # Rebuild the index
-ckan search-index rebuild
+# ckan search-index rebuild
 
 exec "$@"
