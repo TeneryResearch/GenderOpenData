@@ -5,13 +5,15 @@ build:
 	docker compose build
 
 web:
-	docker compose up datapusher
+	docker compose up web
 web-build:
 	docker compose build web
 web-build-nc:
 	docker compose build --no-cache web
 web-bash:
 	docker compose exec web bash
+datapusher:
+	docker compose up datapusher
 
 
 # container commands
@@ -44,7 +46,7 @@ db-publish:
 	docker push cwradvocacy/ckan-db:${BASE_VERSION}
 
 # datapusher
-datapusher:
+datapusher-build:
 	docker build --platform=linux/amd64 -t cwradvocacy/ckan-datapusher:latest -t cwradvocacy/ckan-datapusher:${BASE_VERSION} contrib/ckan-datapusher
 
 datapusher-publish:
