@@ -6,11 +6,11 @@ contextlib2==21.6.0
 -e git+https://github.com/okfn/ckanext-envvars.git@v0.0.3#egg=ckanext-envvars
 -e git+https://github.com/DavidLemayian/ckanext-s3filestore.git@v1.0.3#egg=ckanext-s3filestore
 
--e git+https://github.com/ckan/ckanext-showcase.git@v1.6.0#egg=ckanext-showcase
+-e git+https://github.com/ckan/ckanext-showcase.git@v1.6.1#egg=ckanext-showcase
 # -e git+https://github.com/conwetlab/ckanext-datarequests.git@v1.1.0#egg=ckanext-datarequests
 # -e git+https://github.com/ckan/ckanext-issues.git#egg=ckanext-issues
 
--e git+https://github.com/ckan/ckanext-dcat.git@v1.4.0#egg=ckanext-dcat
+-e git+https://github.com/ckan/ckanext-dcat.git@v1.5.1#egg=ckanext-dcat
 
 -e git+https://github.com/ckan/ckanext-pdfview.git@0.0.8#egg=ckanext-pdfview
 -e git+https://github.com/DavidLemayian/ckanext-gdoc.git#egg=ckanext-gdoc
@@ -21,6 +21,6 @@ contextlib2==21.6.0
 
 -e git+https://github.com/ckan/ckanext-pages.git@v0.5.1#egg=ckanext-pages
 
--e git+https://github.com/ckan/ckanext-harvest.git@v1.5.3#egg=ckanext-harvest
+-e git+https://github.com/ckan/ckanext-harvest.git@v1.5.6#egg=ckanext-harvest
 
 

@@ -17,8 +17,11 @@ RUN pip install uwsgi
 ADD ./datapusher-uwsgi.ini /datapusher-uwsgi.ini
 ADD ./Procfile /Procfile
 
+# for development
+ADD ./datapusher_settings_dev.py /src/datapusher/deployment/datapusher_settings_dev.py
+
 ENV JOB_CONFIG /src/datapusher/deployment/datapusher_settings.py
 
-EXPOSE 8000
+EXPOSE 8800
 
 CMD ["python", "/src/datapusher/datapusher/main.py", "/src/datapusher/deployment/datapusher_settings.py"]
