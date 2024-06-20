@@ -137,8 +137,16 @@ a.tag:hover {
 .site-footer a:hover {
   color: #FF9CE3;
 }
+.site-footer .footer-logos {
+  column-gap: 20px;
+}
 .site-footer .cwra-logo {
-  width: 150px;
+  max-height: 40px;
+  margin: 10px 0;
+  opacity: 0.9;
+}
+.site-footer .tenery-logo {
+  max-height: 30px;
   margin: 10px 0;
   opacity: 0.9;
 }
