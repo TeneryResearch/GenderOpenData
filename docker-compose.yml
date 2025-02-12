@@ -1,11 +1,3 @@
-version: "3.8"
-
-volumes:
-  postgres-data: {}
-  solr-data: {}
-  ckan-filestore: {}
-  redis-data: {}
-
 services:
   web:
     build:
@@ -75,3 +67,8 @@ services:
     healthcheck:
       test: ["CMD", "redis-cli", "-e", "QUIT"]
   
+volumes:
+  postgres-data: {}
+  solr-data: {}
+  ckan-filestore: {}
+  redis-data: {}

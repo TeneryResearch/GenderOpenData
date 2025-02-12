@@ -4,7 +4,8 @@ The GenderOpenData platform is a volunteer-driven repository for gender data and
 resources for feminist advocacy and research across the continent. Accessible at
 <https://genderopendata.org/>
 
-Built by [Tenery Research](https://tenery.cc/) for [CWRA](https://cwra.africa/)
+Developed and maintained by [Tenery Research](https://tenery.cc/) for
+[CWRA](https://cwra.africa/).
 
 ## Getting Started
 
@@ -43,7 +44,7 @@ Built by [Tenery Research](https://tenery.cc/) for [CWRA](https://cwra.africa/)
 ## License
 
 The GenderOpenData platform is a volunteer-driven data platform.  
-Copyright (c) 2021 - 2022 Center for Women's Rights Advocacy
+Copyright (c) 2021 - 2025 Tenery Research Limited.
 
 This program is free software: you can redistribute it and/or modify
 it under the terms of the GNU General Public License as published by

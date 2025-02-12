@@ -1,11 +1,11 @@
-CKAN_VERSION=2.10.4
+CKAN_VERSION=2.10.6
 BASE_VERSION=${CKAN_VERSION}
 
 build:
 	docker compose build
 
 web:
-	docker compose up web
+	docker compose up web -d
 web-build:
 	docker compose build web
 web-build-nc:
