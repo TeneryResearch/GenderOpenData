@@ -2,7 +2,7 @@ FROM python:3.11
 
 ENV DEBIAN_FRONTEND=noninteractive
 
-ARG CKAN_VERSION=2.10.6
+ARG CKAN_VERSION=2.10.7
 
 # Install Postgres Client
 RUN apt-get -qq update \
@@ -15,7 +15,7 @@ ENV PGUSER=ckan_default
 ENV PGPASSWORD=pass
 
 # Issue: setuptools - https://github.com/pypa/setuptools/issues/2017
-RUN pip install -U pip 'setuptools==45'
+RUN pip install -U pip setuptools
 
 RUN pip install -e "git+https://github.com/ckan/ckan.git@ckan-${CKAN_VERSION}#egg=ckan"
 RUN pip install -r /src/ckan/requirements.txt

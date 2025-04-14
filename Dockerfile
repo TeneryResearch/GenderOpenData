@@ -1,4 +1,4 @@
-FROM cwradvocacy/ckan:2.10.6 AS base
+FROM cwradvocacy/ckan:2.10.7 AS base
 
 WORKDIR /
 COPY requirements.txt /requirements.txt
