@@ -39,6 +39,17 @@ Developed and maintained by [Tenery Research](https://tenery.cc/) for
 
 **PS: To Reload Server:** Save / touch `ckan-uwsgi.ini` to reload the server
 
+### Tag Release
+
+We use [Semantic Versioning](https://semver.org/) for versioning.
+
+To tag a new release, run:
+
+```sh
+bumpversion <major|minor|patch>
+git push --tags
+```
+
 ---
 
 ## License

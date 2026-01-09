@@ -1,4 +1,4 @@
-CKAN_VERSION=2.10.7
+CKAN_VERSION=2.10.9
 BASE_VERSION=${CKAN_VERSION}
 
 build:
@@ -31,24 +31,40 @@ issues-init:
 
 # ckan
 ckan:
-	docker build --platform=linux/amd64 --build-arg CKAN_VERSION=${CKAN_VERSION} -t cwradvocacy/ckan:latest -t cwradvocacy/ckan:${BASE_VERSION} contrib/ckan
+	podman build --platform=linux/amd64 --build-arg CKAN_VERSION=${CKAN_VERSION} -t cwradvocacy/ckan:latest -t cwradvocacy/ckan:${BASE_VERSION} contrib/ckan
 
 ckan-publish:
-	docker push cwradvocacy/ckan:latest
-	docker push cwradvocacy/ckan:${BASE_VERSION}
+	podman push cwradvocacy/ckan:latest
+	podman push cwradvocacy/ckan:${BASE_VERSION}
 
 # db
 db:
-	docker build --platform=linux/amd64 -t cwradvocacy/ckan-db:latest -t cwradvocacy/ckan-db:${BASE_VERSION} contrib/postgresql
+	podman build --platform=linux/amd64 -t cwradvocacy/ckan-db:latest -t cwradvocacy/ckan-db:${BASE_VERSION} contrib/postgresql
 
 db-publish:
-	docker push cwradvocacy/ckan-db:latest
-	docker push cwradvocacy/ckan-db:${BASE_VERSION}
+	podman push cwradvocacy/ckan-db:latest
+	podman push cwradvocacy/ckan-db:${BASE_VERSION}
 
 # datapusher
 datapusher-build:
-	docker build --platform=linux/amd64 -t cwradvocacy/ckan-datapusher:latest -t cwradvocacy/ckan-datapusher:${BASE_VERSION} contrib/ckan-datapusher
+	podman build --platform=linux/amd64 -t cwradvocacy/ckan-datapusher:latest -t cwradvocacy/ckan-datapusher:${BASE_VERSION} contrib/ckan-datapusher
 
 datapusher-publish:
-	docker push cwradvocacy/ckan-datapusher:latest
-	docker push cwradvocacy/ckan-datapusher:${BASE_VERSION}
+	podman push cwradvocacy/ckan-datapusher:latest
+	podman push cwradvocacy/ckan-datapusher:${BASE_VERSION}
+
+
+# all
+all:
+	make ckan
+	make db
+	make datapusher-build
+
+publish:
+	make ckan-publish
+	make db-publish
+	make datapusher-publish
+
+all-publish:
+	make all
+	make publish

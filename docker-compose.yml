@@ -14,12 +14,12 @@ services:
     env_file:
       - .env
     volumes:
+      - ckan-filestore:/var/lib/ckan/default
       - ./ckan-dev.ini:/ckan.ini
       - ./contrib/ckan/ckan-uwsgi.ini:/ckan-uwsgi.ini
       - ./contrib/ckan/ckan-entrypoint.sh:/ckan-entrypoint.sh
       - ./ckanext-genderopendata:/src/ckanext-genderopendata
       - ${CKANEXT_S3FILESTORE_DIR}:/src/ckanext-s3filestore
-      - ckan-filestore:/var/lib/ckan/default
       - ${CKANEXT_SENTRY_DIR}:/src/ckanext-sentry
     sysctls:
       net.core.somaxconn: 65536
