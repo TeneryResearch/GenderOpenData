@@ -18,6 +18,9 @@ COPY Procfile /Procfile
 COPY ./ckanext-genderopendata /src/ckanext-genderopendata
 RUN pip install -e /src/ckanext-genderopendata/
 
+# set permissions
+RUN chown -R www-data:www-data /src
+
 EXPOSE 8080/tcp
 
 CMD ["uwsgi", "-i", "/ckan-uwsgi.ini"]
@@ -29,6 +32,3 @@ RUN pip install -r /src/ckan/dev-requirements.txt
 RUN pip install -e /src/ckanext-s3filestore
 RUN pip install -e /src/ckanext-sentry
 RUN pip install -e /src/ckanext-genderopendata
-
-# Set users
-RUN chown -R www-data:www-data /src
