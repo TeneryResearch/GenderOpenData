@@ -22,5 +22,3 @@ contextlib2==21.6.0
 -e git+https://github.com/ckan/ckanext-pages.git@v0.5.2#egg=ckanext-pages
 
 -e git+https://github.com/ckan/ckanext-harvest.git@v1.6.1#egg=ckanext-harvest
-
-
