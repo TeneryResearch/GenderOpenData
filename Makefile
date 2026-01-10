@@ -34,24 +34,24 @@ ckan:
 	podman build --platform=linux/amd64 --build-arg CKAN_VERSION=${CKAN_VERSION} -t cwradvocacy/ckan:latest -t cwradvocacy/ckan:${BASE_VERSION} contrib/ckan
 
 ckan-publish:
-	podman push cwradvocacy/ckan:latest
-	podman push cwradvocacy/ckan:${BASE_VERSION}
+	docker push cwradvocacy/ckan:latest
+	docker push cwradvocacy/ckan:${BASE_VERSION}
 
 # db
 db:
 	podman build --platform=linux/amd64 -t cwradvocacy/ckan-db:latest -t cwradvocacy/ckan-db:${BASE_VERSION} contrib/postgresql
 
 db-publish:
-	podman push cwradvocacy/ckan-db:latest
-	podman push cwradvocacy/ckan-db:${BASE_VERSION}
+	docker push cwradvocacy/ckan-db:latest
+	docker push cwradvocacy/ckan-db:${BASE_VERSION}
 
 # datapusher
 datapusher-build:
 	podman build --platform=linux/amd64 -t cwradvocacy/ckan-datapusher:latest -t cwradvocacy/ckan-datapusher:${BASE_VERSION} contrib/ckan-datapusher
 
 datapusher-publish:
-	podman push cwradvocacy/ckan-datapusher:latest
-	podman push cwradvocacy/ckan-datapusher:${BASE_VERSION}
+	docker push cwradvocacy/ckan-datapusher:latest
+	docker push cwradvocacy/ckan-datapusher:${BASE_VERSION}
 
 
 # all
